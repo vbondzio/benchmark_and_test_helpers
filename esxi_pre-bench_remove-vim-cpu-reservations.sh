@@ -26,4 +26,4 @@ done
 echo "host/user capacity in MHz after:" $(group_unreserved 4)
 echo -e "\nto adjust to boot defaults live, run: ${resetAll}" 
 
-echo -e "\nto reset (any changes since execution, run:\n/bin/cp -f ${confBck} /etc/vmware/esx.conf && reboot"
+echo -e "\nto reset (any changes since execution), run:\n/bin/cp -f ${confBck} /etc/vmware/esx.conf && reboot"
