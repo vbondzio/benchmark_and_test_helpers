@@ -17,7 +17,7 @@ htOn=$((${numPcpus} / ${numCores}))
 vcpu=0
 for node in $(vsish -e ls /hardware/numa/ | sort)
 do
-	firstPcpu=$(vsish -e ls /hardware/numa/${node}pcpus/ | head -1)
+    firstPcpu=$(vsish -e ls /hardware/numa/${node}pcpus/ | head -1)
     lastPcpu=$(vsish -e ls /hardware/numa/${node}pcpus/ | tail -1)
     for i in $(seq $((${firstPcpu} + ${htOn})) ${htOn} $((${lastPcpu} - $((${htOn} - 1)) )) )
         do echo -e "sched.vcpu${vcpu}.affinity = ${i}"
